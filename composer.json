@@ -1,0 +1,12 @@
+{
+    "name": "marcosh/chocorest",
+    "description": "A rest service for my chocolate wrappers collection",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "marcosh",
+            "email": "pasafama@gmail.com"
+        }
+    ],
+    "require": {}
+}
