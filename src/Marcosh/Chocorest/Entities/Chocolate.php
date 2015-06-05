@@ -1,9 +1,9 @@
 <?php
 
-namespace marcosh\chocorest\entities;
+namespace Marcosh\Chocorest\Entities;
 
-class Chocolate {
-
+class Chocolate
+{
     /**
      * @var int
      */
@@ -24,7 +24,7 @@ class Chocolate {
     /**
      * the cocoa percentage, an integer between 0 and 100
      *
-     * @var string
+     * @var string|null
      */
     private $cocoaPercentage;
 
@@ -38,7 +38,34 @@ class Chocolate {
     /**
      * the quantity expressed in grams
      *
-     * @var int
+     * @var int|null
      */
     private $quantity;
+
+    /**
+     * @var boolean
+     */
+    private $double;
+
+    /**
+     * where the wrapper is archived, a string among 'faldone' and 'raccoglitore'
+     *
+     * @var string|null
+     */
+    private $archive;
+
+    /**
+     * @var string|null
+     */
+    private $notes;
+
+    /**
+     * @var string mysql timestamp
+     */
+    private $createdAt;
+
+    /**
+     * @var string mysql timestamp
+     */
+    private $updatedAt;
 }
