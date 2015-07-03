@@ -8,7 +8,9 @@
             "email": "pasafama@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "zendframework/zend-diactoros": "^1.1"
+    },
     "require-dev": {
         "phpunit/phpunit": "4.7.1",
         "mockery/mockery": "0.9.4",
