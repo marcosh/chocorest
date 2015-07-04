@@ -10,9 +10,14 @@ use Zend\Diactoros\Stream;
 
 class Middleware
 {
+    /**
+     * @var RouterInterface
+     */
+    private $router;
+
     public function __construct(RouterInterface $router)
     {
-
+        $this->router = $router;
     }
 
     /**
@@ -23,8 +28,8 @@ class Middleware
         ServerRequestInterface $request,
         ResponseInterface $response)
     {
-        $response->getBody()->write('ciao a tutti');
+        $action = $this->router->route($request);
 
-        return $response;
+        return $action($request, $response);
     }
 }
