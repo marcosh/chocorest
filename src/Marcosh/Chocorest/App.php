@@ -11,15 +11,23 @@ use Zend\Diactoros\Server;
 class App
 {
     /**
-     * @var \Zend\Diactoros\Server $server
+     * @var Server $server
      */
     private $server;
 
+    /**
+     * @param Server $server
+     */
     public function __construct(Server $server)
     {
         $this->server = $server;
     }
 
+    /**
+     * initializes the application creating the configured server
+     *
+     * @return App
+     */
     public static function init()
     {
         $request = ServerRequestFactory::fromGlobals(
@@ -30,10 +38,10 @@ class App
             $_FILES
         );
 
+        $middleware = MiddlewareFactory::create();
+
         $server = Server::createServerFromRequest(
-            function ($request, $response, $done) {
-                echo $request->getUri();
-            },
+            $middleware,
             $request
         );
 
